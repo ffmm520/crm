@@ -52,7 +52,7 @@ public class CourseOrderController {
 
     @RequestMapping("/findByPage")
     @ResponseBody
-    public PageResult<CourseOrder> db(@RequestParam("pageNum")int pageNum, @RequestParam("pageSize") int pageSize){
+    public PageResult<CourseOrder> db(@RequestParam("page")int pageNum, @RequestParam("limit") int pageSize){
         return findCourseOrder.findByPage(pageNum, pageSize);
     }
 

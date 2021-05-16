@@ -34,7 +34,7 @@
         //详见：https://www.layui.com/doc/modules/table.html#totalRow
         table.render({
             elem: '#test'
-            , url: '/courseorder/findByPage?pageNum=1&pageSize=10'
+            , url: '/courseorder/findByPage'
             , toolbar: '#toolbarDemo'
             , title: '用户数据表'
             , totalRow: true
@@ -51,16 +51,18 @@
                     totalRowText: '合计'
                 }
                     , {field: 'name', title: '名字', width: 120, edit: 'text'}
-                    , {field: 'wechat_mark', title: '微信备注', width: 120, sort: true, totalRow: true}
+                    , {field: 'wechat_mark', title: '微信备注', width: 120, sort: true}
                     , {field: 'wechat_no', title: '微信id', width: 80, edit: 'text', sort: true}
-                    , {field: 'qq_no', title: 'QQ', width: 100, sort: true, totalRow: true}
+                    , {field: 'qq_no', title: 'QQ', width: 100, sort: true}
                     , {field: 'course_name', title: '购买课程', width: 80}
-                    , {field: 'course_price', title: '价格', width: 100}
+                    , {field: 'course_price', title: '价格', width: 100, totalRow: true}
                     , {field: 'order_date', title: '订单日期', width: 120}
                     , {fixed: 'right', title: '操作', toolbar: '#barDemo', width: 150}
                 ]
             ]
             , page: true
+            , limit: 15
+            , limits: [10, 15, 20, 25, 30]
         });
 
         //工具栏事件
